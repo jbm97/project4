@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Transactions{% endblock %}
+
+{% block content %}
+<h2>Transactions</h2>
+<a href="{% url 'add_transaction' %}">Add Transaction</a>
+<ul>
+    {% for transaction in transactions %}
+    <li>
+        {{ transaction.date }}: {{ transaction.title }} - ${{ transaction.amount }} ({{ transaction.type }})
+        <a href="{% url 'edit_transaction' transaction.pk %}">Edit</a>
+        <a href="{% url 'delete_transaction' transaction.pk %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

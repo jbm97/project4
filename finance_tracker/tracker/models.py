@@ -26,7 +26,7 @@ class Transaction(models.Model):
     date = models.DateField()
     type = models.CharField(max_length=7, choices=TRANSACTION_TYPES)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return f"{self.title} - {self.amount}"
