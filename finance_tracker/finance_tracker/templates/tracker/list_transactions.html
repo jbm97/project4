@@ -5,7 +5,30 @@
 {% block content %}
 <h2>Transaction Dashboard</h2>
 <a href="{% url 'add_transaction' %}">Add Transaction</a>
+<a href="{% url 'add_account' %}">Add Account</a>
+
 <div class="dashboard">
+
+    <section class="account-section">
+        <h3>Accounts</h3>
+        <ul>
+            {% for account in accounts %}
+            <li>
+                <div class="account">
+                    <div class="account-details">
+                        <h4>{{ account.name }}</h4>
+                        <p>Balance: ${{ account.balance }}</p>
+                    </div>
+                    <div class="account-actions">
+                        <a href="{% url 'edit_account' account.id %}">Edit</a>
+                        <a href="{% url 'delete_account' account.id %}">Delete</a>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+
     <section class="income-section">
         <h3>Income</h3>
         <ul>
