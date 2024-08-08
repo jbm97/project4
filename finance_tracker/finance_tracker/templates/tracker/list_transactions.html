@@ -3,15 +3,57 @@
 {% block title %}Transactions{% endblock %}
 
 {% block content %}
-<h2>Transactions</h2>
+<h2>Transaction Dashboard</h2>
 <a href="{% url 'add_transaction' %}">Add Transaction</a>
-<ul>
-    {% for transaction in transactions %}
-    <li>
-        {{ transaction.date }}: {{ transaction.title }} - ${{ transaction.amount }} ({{ transaction.type }})
-        <a href="{% url 'edit_transaction' transaction.pk %}">Edit</a>
-        <a href="{% url 'delete_transaction' transaction.pk %}">Delete</a>
-    </li>
-    {% endfor %}
-</ul>
+<div class="dashboard">
+    <section class="income-section">
+        <h3>Income</h3>
+        <ul>
+            {% for income in incomes %}
+            <li>
+                <div class="transaction">
+                    <div class="transaction-details">
+                        <h4>{{ income.title }}</h4>
+                        <p>${{ income.amount }}</p>
+                        <p>{{ income.date }}</p>
+                    </div>
+                    <div class="transaction-actions">
+                        <a href="{% url 'edit_transaction' income.pk %}">Edit</a>
+                        <a href="{% url 'delete_transaction' income.pk %}">Delete</a>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="expenses-section">
+        <h3>Expenses</h3>
+        <div class="expenses-list">
+            {% for category, transactions in grouped_expenses.items %}
+            <div class="category">
+                <h4>{{ category }}</h4>
+                <ul>
+                    {% for transaction in transactions %}
+                    <li>
+                        <div class="transaction">
+                            <div class="transaction-details">
+                                <h4>{{ transaction.title }}</h4>
+                                <p>${{ transaction.amount }}</p>
+                                <p>{{ transaction.date }}</p>
+                            </div>
+                            <div class="transaction-actions">
+                                <a href="{% url 'edit_transaction' transaction.pk %}">Edit</a>
+                                <a href="{% url 'delete_transaction' transaction.pk %}">Delete</a>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
 {% endblock %}

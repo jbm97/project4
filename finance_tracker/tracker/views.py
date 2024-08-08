@@ -6,8 +6,20 @@ def home(request):
     return render(request, 'tracker/home.html')
 
 def list_transactions(request):
-    transactions = Transaction.objects.all()
-    return render(request, 'tracker/list_transactions.html', {'transactions': transactions})
+    expenses = Transaction.objects.filter(type='expense').order_by('-date')
+    incomes = Transaction.objects.filter(type='income').order_by('-date')
+
+    grouped_expenses = {}
+    for expense in expenses:
+        if expense.category.name not in grouped_expenses:
+            grouped_expenses[expense.category.name] = []
+        grouped_expenses[expense.category.name].append(expense)
+
+    lists = {
+        'grouped_expenses': grouped_expenses,
+        'incomes': incomes,
+    }
+    return render(request, 'tracker/list_transactions.html', lists)
 
 def add_transaction(request):
     if request.method == 'POST':
