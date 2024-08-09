@@ -2,7 +2,40 @@
 
 {% block title %}Home{% endblock %}
 
+{% block body_class %}home-page{% endblock %}
+
+{% block header_class %}home-page{% endblock %}
+
 {% block content %}
-    <h2>Welcome</h2>
-    <p>This is the homepage.</p>
+    <div class="home-container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Welcome to Finance Tracker</h1>
+                <p>Your personal finance management solution.</p>
+            </div>
+        </section>
+        <section class="about-section">
+            <h2>About Us!</h2>
+            <p>Finance Tracker is designed to help you manage your finances effectively. Track your income, expenses, and accounts all in one place. Get insights into your spending patterns and make informed financial decisions.</p>
+            <div class="features">
+                <div class="feature">
+                    <h3>Manage Accounts</h3>
+                    <p>Handle multiple accounts seamlessly.</p>
+                </div>
+                <div class="feature">
+                    <h3>Track Transactions</h3>
+                    <p>Monitor your income and expenses easily.</p>
+                </div>
+                <div class="feature">
+                    <h3>Financial Reports</h3>
+                    <p>Generate detailed financial reports.</p>
+                </div>
+                <div class="feature">
+                    <h3>Set Budgets</h3>
+                    <p>Keep track of your spending limits.</p>
+                </div>
+            </div>
+            <button>Get Started Now!</button>
+        </section>
+    </div>
 {% endblock %}

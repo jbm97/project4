@@ -4,14 +4,17 @@
 
 {% block content %}
 <h2>Transaction Dashboard</h2>
-<a href="{% url 'add_transaction' %}">Add Transaction</a>
-<a href="{% url 'add_account' %}">Add Account</a>
+<div class="transaction-buttons">
+    <button><a href="{% url 'add_transaction' %}">Add Transaction</a></button>
+    <button><a href="{% url 'add_account' %}">Add Account</a></button>
+</div>
 
 <div class="dashboard">
 
     <section class="account-section">
         <h3>Accounts</h3>
         <ul>
+            <div class="accounts-list">
             {% for account in accounts %}
             <li>
                 <div class="account">
@@ -24,8 +27,9 @@
                         <a href="{% url 'delete_account' account.id %}">Delete</a>
                     </div>
                 </div>
-            </li>
+            </li>        
             {% endfor %}
+            </div>
         </ul>
     </section>
 
