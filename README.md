@@ -35,16 +35,8 @@ cd finance-tracker/finance_tracker
 Set up the virutal environment and install dependencies.
 
 ```bash
-python -m venv .venv # Could be python3 instead
+python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-OR
-
-```bash
-brew install pipenv
-pipenv shell
 pip install -r requirements.txt
 ```
 
