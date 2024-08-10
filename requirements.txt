@@ -5,9 +5,11 @@ Django==5.0.8
 django-extensions==3.2.3
 exceptiongroup==1.2.2
 executing==2.0.1
+gunicorn==22.0.0
 ipython==8.26.0
 jedi==0.19.1
 matplotlib-inline==0.1.7
+packaging==24.1
 parso==0.8.4
 pexpect==4.9.0
 prompt_toolkit==3.0.47

@@ -1,7 +1,7 @@
 # SEPBT220 Project 4: Personal Finance Tracker App
 
 ## Project Description
-The Personal Finance Tracker App is a web application designed to help users manage their finances by tracking income, expenses, and account balances. Users can categorize their transactions, view summaries, and filter data to gain insights into their spending habits. The app is built using Django and provides a clean, user-friendly interface with quick backend functionality.
+The Personal Finance Tracker App is a web application designed to help users manage their finances by tracking income, expenses, and account balances. Users can categorize their transactions, view summaries, and filter data to gain insights into their spending habits.
 
 ## Project Links
 - [Live Demo]()
