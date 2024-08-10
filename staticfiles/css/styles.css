@@ -1,0 +1,418 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+body.home-page {
+    background: url('https://images.wallpaperscraft.com/image/single/money_coins_dollars_218243_3840x2160.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+header {
+    background-color: #161b22;
+    color: #c9d1d9;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header.home-page {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav a {
+    color: #58a6ff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #161b22;
+    color: #c9d1d9;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #161b22;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    background-color: #21262d;
+    color: #c9d1d9;
+}
+
+form select {
+    width: 100%;
+}
+
+form button {
+    background-color: #238636;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #2ea043;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #161b22;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+ul li a {
+    color: #58a6ff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+button a, button {
+    background-color: #238636;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button a:hover, button:hover {
+    background-color: #2ea043;
+    color: #ffffff;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.account-section,
+.income-section,
+.expenses-section {
+    margin-bottom: 20px;
+}
+
+.account-section h3,
+.income-section h3,
+.expenses-section h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #30363d;
+    padding-bottom: 5px;
+    color: #58a6ff;
+}
+
+.category {
+    margin-bottom: 20px;
+}
+
+.category h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    color: #58a6ff;
+}
+
+.dashboard ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dashboard li {
+    background: #161b22;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.transaction,
+.account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction-details,
+.account-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction-details h4,
+.account-details h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #58a6ff;
+}
+
+.transaction-details p,
+.account-details p {
+    margin: 0;
+    color: #8b949e;
+}
+
+.transaction-actions,
+.account-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.transaction-actions a,
+.account-actions a {
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #30363d;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #238636;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.transaction-actions a:hover,
+.account-actions a:hover {
+    background-color: #2ea043;
+}
+
+.expenses-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.accounts-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.account {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    padding: 10px;
+}
+
+.account-details h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #58a6ff;
+    text-align: center;
+}
+
+.account-details p {
+    margin: 0 0 10px;
+    color: #8b949e;
+    text-align: center;
+}
+
+.home-container {
+    min-height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.hero-section {
+    color: #c9d1d9;
+    padding: 80px 20px 35px;
+    text-align: center;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    margin: 0 0 10px;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+    margin: 0;
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.about-section {
+    background-color: rgba(22, 27, 34, 0.664);
+    padding: 40px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    backdrop-filter: blur(3px);
+}
+
+.about-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #58a6ff;
+}
+
+.about-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #c9d1d9;
+}
+
+.about-section button {
+    padding: 5px;
+    margin: 20px;
+    background-color: #238636;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature {
+    background-color: #21262d;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    flex: 1;
+    max-width: 200px;
+    text-align: center;
+}
+
+.feature h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #58a6ff;
+}
+
+@media (max-width: 1150px) {
+    .expenses-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .accounts-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .expenses-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .accounts-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-section h1 {
+        font-size: 36px;
+    }
+
+    .hero-section p {
+        font-size: 18px;
+    }
+
+    .about-section h2 {
+        font-size: 28px;
+    }
+
+    .about-section p,
+    .feature h3,
+    .feature p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 650px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .expenses-list,
+    .accounts-list {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section h1 {
+        font-size: 28px;
+    }
+
+    .welcome-section p {
+        font-size: 16px;
+    }
+
+    .about-section h2 {
+        font-size: 24px;
+    }
+
+    .about-section p,
+    .about-section ul li {
+        font-size: 14px;
+    }
+}
