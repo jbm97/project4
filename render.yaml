@@ -1,6 +1,10 @@
 services:
-  - buildCommand:
-      python manage.py collectstatic --noinput
+  - type: web
+    name: finance-tracker
+    env: python
     preDeployCommand: |
-      python manage.py migrate &&
-      python manage.py loaddata fixtures/initial_data.json
+      echo "Render YAML is working"
+    buildCommand: |
+      pip install -r requirements.txt
+    startCommand: |
+      gunicorn finance_tracker.wsgi:application
