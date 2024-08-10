@@ -1,0 +1,4 @@
+web: python manage.py migrate &&
+     python manage.py loaddata fixtures/initial_data.json &&
+     python manage.py collectstatic --noinput &&
+     gunicorn finance_tracker.wsgi:application
